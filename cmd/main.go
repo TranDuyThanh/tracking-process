@@ -89,10 +89,11 @@ func getRSS(process string) (*float64, string) {
 	raw, err := sh.Command("ps", "aux").
 		Command("grep", *processName).
 		Command("grep", "-v", "grep").
+		Command("grep", "-v", "ptrack").
 		Command("head", "-n1").
 		Output()
 	if err != nil {
-		fmt.Println(err.Error())
+		// fmt.Println(err.Error())
 		return nil, ""
 	}
 
@@ -111,7 +112,7 @@ func getRSS(process string) (*float64, string) {
 
 	f, err := strconv.ParseFloat(data, 64)
 	if err != nil {
-		fmt.Println(err.Error())
+		// fmt.Println(err.Error())
 		return nil, ""
 	}
 	return &f, processInfo
