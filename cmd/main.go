@@ -32,7 +32,7 @@ func main() {
 	lc1.X = 0
 	lc1.Y = 0
 	lc1.AxesColor = ui.ColorWhite
-	lc1.LineColor = ui.ColorYellow | ui.AttrBold
+	lc1.LineColor = ui.ColorRed | ui.AttrBold
 
 	par := ui.NewPar(":PRESS q TO QUIT DEMO")
 	par.Height = 3
